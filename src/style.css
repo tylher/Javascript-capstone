@@ -29,12 +29,27 @@ header {
   padding: 30px 5%;
 }
 
-input {
+.icon-input{
+  position: relative;
   width: 30%;
+  display: flex;
+  align-items: center;
+}
+
+.icon-input input {
+  width: 100% ;
   padding: 10px 30px;
   font-size: 0.9em;
   border: none;
+  outline: none;
   border-radius: 20px;
+}
+
+.icon-input i{
+  color: black;
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
 }
 
 .page-navigation {
