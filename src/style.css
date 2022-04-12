@@ -2,7 +2,9 @@
 
 body {
   color: #fff;
-  background-color: rgb(14, 6, 36);
+  background-image: url('./imgs/cover.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: 'Poppins', sans-serif;
 }
 
