@@ -54,7 +54,7 @@ input {
   border-radius: 10px;
 }
 
-footer{
+footer {
   display: flex;
   gap: 30px;
   align-items: center;
@@ -67,21 +67,21 @@ footer{
   left: 0;
 }
 
-footer p{
+footer p {
   color: rgb(172, 172, 172);
   font-weight: 300;
 }
 
-.socials-holder{
+.socials-holder {
   text-align: center;
 }
 
-.socials{
+.socials {
   display: flex;
   gap: 5px;
 }
 
-.socials li{
+.socials li {
   font-size: 1.1em;
   display: flex;
   justify-content: center;
@@ -91,9 +91,7 @@ footer p{
   height: 35px;
 }
 
-.socials li:hover{
+.socials li:hover {
   border-radius: 50%;
   background-color: rgb(52, 26, 122);
-  
 }
-
