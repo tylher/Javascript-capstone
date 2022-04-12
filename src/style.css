@@ -1,13 +1,97 @@
 @import url('https://fonts.googleapis.com/css2?family=Cambay&family=Krona+One&family=Montserrat:wght@300;900&family=Poppins:wght@100;400&family=Prompt:wght@300;500&family=Roboto&display=swap');
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   color: #fff;
   background-color: rgb(14, 6, 36);
   font-family: 'Poppins', sans-serif;
 }
 
+li {
+  list-style: none;
+}
+
 main {
   width: 80%;
   margin: 0 auto;
   text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 5%;
+}
+
+input {
+  width: 30%;
+  padding: 10px 30px;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 20px;
+}
+
+.page-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.page-navigation li > a {
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+.page-navigation li > a:hover {
+  background-color: rgb(54, 27, 126);
+  border-radius: 10px;
+}
+
+footer {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  background-color: rgb(14, 13, 13);
+  min-height: 50px;
+  padding: 20px 10%;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+footer p {
+  color: rgb(172, 172, 172);
+  font-weight: 300;
+}
+
+.socials-holder {
+  text-align: center;
+}
+
+.socials {
+  display: flex;
+  gap: 5px;
+}
+
+.socials li {
+  font-size: 1.1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 35px;
+  height: 35px;
+}
+
+.socials li:hover {
+  border-radius: 50%;
+  background-color: rgb(52, 26, 122);
 }
