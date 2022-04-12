@@ -26,12 +26,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 10%;
+  padding: 30px 5%;
 }
 
 input {
   width: 30%;
-  padding: 10px;
+  padding: 10px 30px;
   font-size: 0.9em;
   border: none;
   border-radius: 20px;
@@ -41,6 +41,21 @@ input {
   display: flex;
   justify-content: center;
   gap: 30px;
+}
+
+footer{
+  background-color: rgb(14, 13, 13);
+  min-height: 50px;
+  padding: 20px 5%;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+footer p{
+  color: rgb(156, 156, 156);
+  font-weight: 300;
 }
 
 .page-navigation li > a {
