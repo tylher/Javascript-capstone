@@ -43,21 +43,6 @@ input {
   gap: 30px;
 }
 
-footer{
-  background-color: rgb(14, 13, 13);
-  min-height: 50px;
-  padding: 20px 5%;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-}
-
-footer p{
-  color: rgb(156, 156, 156);
-  font-weight: 300;
-}
-
 .page-navigation li > a {
   text-decoration: none;
   color: #fff;
@@ -68,3 +53,47 @@ footer p{
   background-color: rgb(54, 27, 126);
   border-radius: 10px;
 }
+
+footer{
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  background-color: rgb(14, 13, 13);
+  min-height: 50px;
+  padding: 20px 10%;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+footer p{
+  color: rgb(172, 172, 172);
+  font-weight: 300;
+}
+
+.socials-holder{
+  text-align: center;
+}
+
+.socials{
+  display: flex;
+  gap: 5px;
+}
+
+.socials li{
+  font-size: 1.1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 35px;
+  height: 35px;
+}
+
+.socials li:hover{
+  border-radius: 50%;
+  background-color: rgb(52, 26, 122);
+  
+}
+
