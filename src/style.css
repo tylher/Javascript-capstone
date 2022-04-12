@@ -1,13 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Cambay&family=Krona+One&family=Montserrat:wght@300;900&family=Poppins:wght@100;400&family=Prompt:wght@300;500&family=Roboto&display=swap');
 
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   color: #fff;
   background-color: rgb(14, 6, 36);
   font-family: 'Poppins', sans-serif;
 }
 
+li{
+  list-style: none;
+}
+
 main {
   width: 80%;
   margin: 0 auto;
   text-align: center;
+}
+
+header{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 30px 10%;
+}
+
+input{
+  width: 30%;
+  padding: 10px;
+  font-size: .9em;
+  border: none;
+  border-radius: 20px;
+}
+
+.page-navigation{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.page-navigation li>a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.page-navigation li>a:hover{
 }
