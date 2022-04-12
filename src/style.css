@@ -8,8 +8,10 @@
 
 body {
   color: #fff;
-  background-image: url('./imgs/cover.jpg');
+  background-image: linear-gradient(#000000be, #000), url('./imgs/cover.jpg');
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   background-size: cover;
   font-family: 'Poppins', sans-serif;
 }
@@ -19,20 +21,56 @@ li {
 }
 
 main {
-  width: 80%;
+  padding-top: 8rem;
+  display: flex;
+  width: 85%;
   margin: 0 auto;
-  text-align: center;
+  padding-bottom: 8rem;
+}
+
+.cards {
+  flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+}
+
+.card {
+  padding: 10px;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(21, 7, 59);
+  width: 20%;
+  margin: 20px;
+}
+
+.movi-title {
+  margin-bottom: 10px;
+}
+
+.reservation-btn {
+  padding: 3px 6px;
+  border: #ffde7b 2px solid;
+  margin-right: 0;
+  margin-top: 20px;
+  width: 40%;
+  background-color: #fec827;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.493);
 }
 
 header {
+  width: 100%;
+  background-image: linear-gradient(180deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.034));
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 5%;
+  padding: 20px 5%;
+  position: fixed;
 }
 
 input {
-  width: 30%;
+  width: 23%;
   padding: 10px 30px;
   font-size: 0.9em;
   border: none;
@@ -48,20 +86,24 @@ input {
 .page-navigation li > a {
   text-decoration: none;
   color: #fff;
-  padding: 5px 10px;
+  padding: 3px 10px;
 }
 
 .page-navigation li > a:hover {
   background-color: rgb(54, 27, 126);
-  border-radius: 10px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
 
 footer {
+  justify-content: space-around;
   display: flex;
   gap: 30px;
   align-items: center;
   background-color: rgb(14, 13, 13);
-  min-height: 50px;
   padding: 20px 10%;
   position: fixed;
   width: 100%;
@@ -76,11 +118,13 @@ footer p {
 
 .socials-holder {
   text-align: center;
+  display: flex;
 }
 
 .socials {
   display: flex;
   gap: 5px;
+  margin-left: 4rem;
 }
 
 .socials li {
@@ -90,10 +134,8 @@ footer p {
   align-items: center;
   text-align: center;
   width: 35px;
-  height: 35px;
 }
 
 .socials li:hover {
-  border-radius: 50%;
-  background-color: rgb(52, 26, 122);
+  color: rgb(52, 26, 122);
 }
