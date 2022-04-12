@@ -46,7 +46,10 @@ input{
 .page-navigation li>a{
   text-decoration: none;
   color: #fff;
+  padding: 5px 10px;
 }
 
 .page-navigation li>a:hover{
+  background-color: rgb(54, 27, 126);
+  border-radius: 10px;
 }
