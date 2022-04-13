@@ -21,12 +21,24 @@ const searchShow = (query) => {
       const results = jsonData.map((item) => item.show);
       displayItem(results);
       console.log(results)
-    });
+    })
+    .catch(() => {
+
+      displayItem([]);
+    })
 };
 
+let setTimeoutTOken = 0;
 window.onload = () => {
   const searchArea = document.querySelector('.Search');
-  searchArea.onkeyup = (e) => {
-    searchShow(searchArea.value);
+
+  clearTimeout(setTimeoutTOken);
+  searchArea.onkeyup = () => {
+    if (searchArea.value.trim().legth === 0) {
+      return;
+    }
+    setTimeoutTOken = setTimeout(() => {
+      searchShow(searchArea.value);
+    }, 250);
   };
 };
