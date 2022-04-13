@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  position: relative;
+  bottom: 30px;
+}
+
+.fa-star {
+  font-size: 18px;
+}
+
+.star-rating {
+  width: 100px;
+}
+
+.star-rating-group {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
