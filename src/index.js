@@ -27,12 +27,12 @@ const searchShow = (query) => {
 };
 
 const acceil = document.querySelector('.title');
-const searchArea = document.querySelector('.Search');
+const searchArea = document.querySelector('input[type=text]');
 let setTimeoutTOken = 0;
 window.onload = () => {
   clearTimeout(setTimeoutTOken);
   searchArea.onkeyup = () => {
-    if (searchArea.value.trim().legth === 0) {
+    if (searchArea.value.trim().length === 0) {
       return;
     }
 
