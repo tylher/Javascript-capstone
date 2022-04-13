@@ -47,4 +47,4 @@ function renderPopUp(func) {
   popup.insertAdjacentHTML('beforeend', func);
 }
 
-export default { temp, renderPopUp };
+export { temp, renderPopUp };
