@@ -7,7 +7,7 @@ const displayItem = (results) => {
     const scoreLi = document.createElement('div');
     scoreLi.className = 'card';
     scoreLi.innerHTML = `<p class="movi-title">${item.name}</p>
-                         <img src="${item.image.medium}">
+                         <img src="${item.image.original}">
                          <button type="submit" class="reservation-btn">Reservation</button>`;
     card.appendChild(scoreLi);
   });
@@ -33,18 +33,22 @@ window.onload = () => {
   clearTimeout(setTimeoutTOken);
   searchArea.onkeyup = () => {
     if (searchArea.value.trim().length === 0) {
+      const card = document.querySelector('.cards');
+      card.innerHTML = '';
+      acceil.classList.add('block');
+      acceil.classList.remove('none');
       return;
     }
 
     if (searchArea.value !== '') {
+      setTimeoutTOken = setTimeout(() => {
+        searchShow(searchArea.value);
+      }, 250);
       acceil.classList.add('none');
       acceil.classList.remove('block');
     } else {
       acceil.classList.add('block');
       acceil.classList.remove('none');
     }
-    setTimeoutTOken = setTimeout(() => {
-      searchShow(searchArea.value);
-    }, 250);
   };
 };
