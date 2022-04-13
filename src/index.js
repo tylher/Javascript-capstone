@@ -27,28 +27,24 @@ const searchShow = (query) => {
 };
 
 const acceil = document.querySelector('.title');
-const searchArea = document.querySelector('input[type=text]');
+const searchArea = document.querySelector('.search');
 let setTimeoutTOken = 0;
 window.onload = () => {
   clearTimeout(setTimeoutTOken);
   searchArea.onkeyup = () => {
-    if (searchArea.value.trim().length === 0) {
-      const card = document.querySelector('.cards');
-      card.innerHTML = '';
-      acceil.classList.add('block');
-      acceil.classList.remove('none');
-      return;
-    }
+    // if (searchArea.value.trim().length === 0) {
+    //   return;
+    // }
 
     if (searchArea.value !== '') {
-      setTimeoutTOken = setTimeout(() => {
-        searchShow(searchArea.value);
-      }, 250);
       acceil.classList.add('none');
       acceil.classList.remove('block');
     } else {
       acceil.classList.add('block');
       acceil.classList.remove('none');
     }
+    setTimeoutTOken = setTimeout(() => {
+      searchShow(searchArea.value);
+    }, 250);
   };
 };
