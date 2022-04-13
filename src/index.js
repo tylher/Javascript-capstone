@@ -23,20 +23,28 @@ const searchShow = (query) => {
       console.log(results)
     })
     .catch(() => {
-
       displayItem([]);
     })
 };
 
+const acceil = document.querySelector('.title');
+const searchArea = document.querySelector('.Search');
 let setTimeoutTOken = 0;
 window.onload = () => {
-  const searchArea = document.querySelector('.Search');
-
   clearTimeout(setTimeoutTOken);
   searchArea.onkeyup = () => {
     if (searchArea.value.trim().legth === 0) {
       return;
     }
+
+    if(searchArea.value !== ''){
+      acceil.classList.add('none');
+      acceil.classList.remove('block')
+    }else {
+      acceil.classList.add('block')
+      acceil.classList.remove('none')
+    }
+    console.log(searchArea.value)
     setTimeoutTOken = setTimeout(() => {
       searchShow(searchArea.value);
     }, 250);
