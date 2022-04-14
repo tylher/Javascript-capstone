@@ -40,7 +40,7 @@ li {
   color: rgb(212, 212, 212);
   z-index: -1;
   margin: 50px 10%;
-  height: 600px;
+  height: 500px;
   display: flex;
   align-items: center;
   backdrop-filter: blur(1rem);
@@ -58,7 +58,7 @@ li {
   gap: 10px;
   position: relative;
   padding: 20px;
-  height: 95%;
+  height: 90%;
   width: 100%;
 }
 
