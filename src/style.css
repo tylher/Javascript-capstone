@@ -34,27 +34,27 @@ main {
 }
 
 .title {
-  font-size: 35px;
+  width: 100%;
   margin-top: 5rem;
 }
 
 .none {
-  font-size: 0;
+  width: 0;
+  opacity: 0;
 }
 
 .block {
-  font-size: 35px;
+  width: 100%;
+  opacity: 1;
 }
 
 .cards {
   flex-wrap: wrap;
-  width: 100%;
   display: flex;
 }
 
 .card {
   overflow: hidden;
-  padding: 10px 0;
   text-align: start;
   display: flex;
   flex-direction: column;
@@ -62,6 +62,23 @@ main {
   background-color: rgb(39, 39, 39);
   width: 22%;
   margin: 13px;
+}
+
+.home_cards {
+  flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+}
+
+.home_cards .card {
+  overflow: hidden;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(39, 39, 39);
+  width: 9%;
+  margin: 5px;
 }
 
 .movi-title {
@@ -78,7 +95,6 @@ main {
   margin-bottom: 10px;
   width: 40%;
   background-color: #ffac31;
-
 }
 
 header {

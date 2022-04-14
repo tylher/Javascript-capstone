@@ -6,16 +6,16 @@ const displayItem = (results) => {
   results.forEach((item) => {
     const scoreLi = document.createElement('div');
     scoreLi.className = 'card';
-    scoreLi.innerHTML = `<p class="movi-title">${item.name}</p>
-                         <img src="${item.image.medium}">
+    scoreLi.innerHTML = `<img src="${item.image.medium}">
+                         <p class="movi-title">${item.name}</p>
                          <button type="submit" class="reservation-btn">Reservation</button>`;
     card.appendChild(scoreLi);
   });
 };
 
-const searchShow = (query) => {
+const searchShow = async (query) => {
   const BASE_URL = `https://api.tvmaze.com/search/shows?q=${query}`;
-  fetch(BASE_URL)
+  await fetch(BASE_URL)
     .then((respose) => respose.json())
     .then((jsonData) => {
       const results = jsonData.map((item) => item.show);
@@ -48,3 +48,23 @@ window.onload = () => {
     }, 250);
   };
 };
+
+const displayhomeItem = (result) => {
+  const card = document.querySelector('.home_cards');
+  card.innerHTML = '';
+  result.forEach((item) => {
+    const scoreLi = document.createElement('div');
+    scoreLi.className = 'card';
+    scoreLi.innerHTML = `<img src="${item.image.medium}">
+                         <p class="movi-title">${item.name}</p>`;
+    card.appendChild(scoreLi);
+  });
+};
+
+const BASE_URL = `https://api.tvmaze.com/search/shows?q=blac`;
+  fetch(BASE_URL)
+  .then((respose) => respose.json())
+  .then((jsonData) => {
+   const result = jsonData.map((item) => item.show);
+    displayhomeItem(result);
+    })
