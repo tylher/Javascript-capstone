@@ -91,36 +91,14 @@ header {
   position: fixed;
 }
 
-<<<<<<< HEAD
-.icon-input {
-  position: relative;
-  width: 30%;
-  display: flex;
-  align-items: center;
-}
-
-.icon-input input {
-  width: 100%;
-=======
 input {
   width: 23%;
->>>>>>> parent of ffa9c01 (Modified the content)
   padding: 10px 30px;
   font-size: 0.9em;
   border: none;
   border-radius: 20px;
 }
 
-<<<<<<< HEAD
-.icon-input i {
-  color: black;
-  position: absolute;
-  right: 0;
-  margin-right: 20px;
-}
-
-=======
->>>>>>> parent of ffa9c01 (Modified the content)
 .page-navigation {
   display: flex;
   justify-content: center;
