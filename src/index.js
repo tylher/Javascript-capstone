@@ -3,8 +3,8 @@ import './popup.css';
 import { temp, renderPopUp } from './modules/popup.js';
 import getShow from './modules/get-show.js';
 
+const card = document.querySelector('.cards');
 const displayItem = (results) => {
-  const card = document.querySelector('.cards');
   card.innerHTML = '';
   const like = false;
   results.forEach((item) => {
@@ -82,9 +82,13 @@ window.onload = () => {
     }
 
     if (searchArea.value !== '') {
+      card.classList.add('block');
+      card.classList.remove('none');
       acceil.classList.add('none');
       acceil.classList.remove('block');
     } else {
+      card.classList.add('none');
+      card.classList.remove('block');
       acceil.classList.add('block');
       acceil.classList.remove('none');
     }
