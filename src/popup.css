@@ -49,11 +49,7 @@ li {
 
 
 .popup-card {
-<<<<<<< HEAD
   overflow-y: hidden;
-=======
-  overflow-y: auto;
->>>>>>> deb5e427630492510e7984b6ec447fa4a8ad04d6
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -62,6 +58,11 @@ li {
   padding: 20px ;
   height: 450px;
 }
+
+.popup-card:hover{
+  overflow-y: auto;
+}
+
 
 .popup-card::-webkit-scrollbar {
   width: 10px;
@@ -84,7 +85,7 @@ li {
 .fa-xmark{
    position: fixed;
    font-size: 50px;
-   right: 200px;
+   right: 150px;
 }
 
 .img-box {
