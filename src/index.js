@@ -6,7 +6,7 @@ import getShow from './modules/get-show.js';
 const displayItem = (results) => {
   const card = document.querySelector('.cards');
   card.innerHTML = '';
-  const like = 0;
+  const like = false;
   results.forEach((item) => {
     const scoreLi = document.createElement('div');
     scoreLi.className = 'card';
@@ -39,6 +39,7 @@ const displayPopUp = async (id) => {
   await getShow(id).then((data) => {
     popup.innerHTML = '';
     popup.classList.remove('d-none');
+    popup.style.width = '80%';
     popup.style.zIndex = '1';
     renderPopUp(temp(data));
     backgroundBlur();
@@ -52,6 +53,18 @@ const searchShow = async (query) => {
     .then((jsonData) => {
       const results = jsonData.map((item) => item.show);
       displayItem(results);
+      const commentBtn = document.querySelectorAll('.comment-btn');
+      commentBtn.forEach((comment) => {
+        comment.addEventListener('click', (e) => {
+          const NAME = e.target.parentElement.parentElement.childNodes[2].textContent;
+          results.map((item) => {
+            if (NAME === item.name) {
+              displayPopUp(item.id);
+            }
+            return '';
+          });
+        });
+      });
     })
     .catch(() => {
       displayItem([]);
@@ -83,13 +96,17 @@ window.onload = () => {
 
 const displayhomeItem = (result) => {
   const card = document.querySelector('.home_cards');
+  const like = false;
   card.innerHTML = '';
   result.forEach((item) => {
     const scoreLi = document.createElement('div');
     scoreLi.className = 'card';
     scoreLi.innerHTML = `<img src="${item.image.medium}">
                          <p class="movi-title">${item.name}</p>
-                         <button type="submit" class="reservation-btn">Comment</button>`;
+                         <div>
+                         <button type="submit" class="comment-btn">Comment</button>
+                         ${like ? '<i class="fa-solid fa-heart"></i>' : '<i class="fa-regular fa-heart"></i>'}
+                         </div>`;
     card.appendChild(scoreLi);
   });
 };
@@ -100,4 +117,16 @@ fetch(BASE_URL)
   .then((jsonData) => {
     const result = jsonData.map((item) => item.show);
     displayhomeItem(result);
+    const commentBtn = document.querySelectorAll('.comment-btn');
+    commentBtn.forEach((comment) => {
+      comment.addEventListener('click', (e) => {
+        const NAME = e.target.parentElement.parentElement.childNodes[2].textContent;
+        result.map((item) => {
+          if (NAME === item.name) {
+            displayPopUp(item.id);
+          }
+          return '';
+        });
+      });
+    });
   });
