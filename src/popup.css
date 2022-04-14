@@ -49,7 +49,7 @@ li {
 
 
 .popup-card {
-  overflow-y: auto;
+  overflow-y: hidden;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -58,6 +58,11 @@ li {
   padding: 20px ;
   height: 450px;
 }
+
+.popup-card:hover{
+  overflow-y: auto;
+}
+
 
 .popup-card::-webkit-scrollbar {
   width: 10px;
@@ -78,9 +83,9 @@ li {
 }
 
 .fa-xmark{
-   position: absolute;
+   position: fixed;
    font-size: 50px;
-   right: 50px;
+   right: 150px;
 }
 
 .img-box {
@@ -148,4 +153,10 @@ li {
 
 .d-block{
   display: block;
+}
+
+.comments{
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
 }
