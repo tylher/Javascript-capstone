@@ -4,6 +4,7 @@ import { temp, renderPopUp } from './modules/popup.js';
 import getShow from './modules/get-show.js';
 
 const card = document.querySelector('.cards');
+const numberItem = document.querySelector('.number');
 const displayItem = (results) => {
   card.innerHTML = '';
   const like = false;
@@ -18,6 +19,8 @@ const displayItem = (results) => {
                          </div>`;
     card.appendChild(scoreLi);
   });
+  const cards = document.querySelectorAll('.card');
+  numberItem.textContent = cards.length - 10;
 };
 
 const backgroundBlur = () => {
@@ -94,7 +97,7 @@ window.onload = () => {
     }
     setTimeoutTOken = setTimeout(() => {
       searchShow(searchArea.value);
-    }, 250);
+    }, 350);
   };
 };
 
@@ -113,6 +116,8 @@ const displayhomeItem = (result) => {
                          </div>`;
     card.appendChild(scoreLi);
   });
+  const cards = document.querySelectorAll('.card');
+console.log(cards.length)
 };
 
 const BASE_URL = 'https://api.tvmaze.com/search/shows?q=blac';
