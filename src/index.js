@@ -11,44 +11,15 @@ const displayItem = (results) => {
     const scoreLi = document.createElement('div');
     scoreLi.className = 'card';
     scoreLi.innerHTML = `<p class="movi-title">${item.name}</p>
-                         <img src="${item.image.original}">
-                         <div>
-                         <button type="submit" class="comment-btn">Comment</button>
-                         ${like ? '<i class="fa-solid fa-heart"></i>' : '<i class="fa-regular fa-heart"></i>'}
-                         </div>
-                         `;
+                         <img src="${item.image.medium}">
+                         <button type="submit" class="reservation-btn">Reservation</button>`;
     card.appendChild(scoreLi);
-  });
-};
-
-const backgroundBlur = () => {
-  const popup = document.querySelector('.popup');
-  const cover = document.querySelector('.cover');
-  const body = document.querySelector('body');
-  cover.classList.add('d-block');
-  body.style.overflow = 'hidden';
-  const closeBtn = document.querySelector('.fa-xmark');
-  closeBtn.addEventListener('click', () => {
-    popup.classList.add('d-none');
-    cover.classList.remove('d-block');
-    body.style.overflowY = 'scroll';
-  });
-};
-
-const displayPopUp = async (id) => {
-  const popup = document.querySelector('.popup');
-  await getShow(id).then((data) => {
-    popup.innerHTML = '';
-    popup.classList.remove('d-none');
-    popup.style.zIndex = '1';
-    renderPopUp(temp(data));
-    backgroundBlur();
   });
 };
 
 const searchShow = (query) => {
   const BASE_URL = `https://api.tvmaze.com/search/shows?q=${query}`;
-  await fetch(BASE_URL)
+  fetch(BASE_URL)
     .then((respose) => respose.json())
     .then((jsonData) => {
       const results = jsonData.map((item) => item.show);
