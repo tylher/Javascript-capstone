@@ -19,6 +19,10 @@ body {
   background-position: center;
   background-size: cover;
   font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 li {

@@ -1,14 +1,16 @@
 const temp = ({
-  genres, image, language, summary, name, rating,
+  genres, image, language, summary, name, rating, status,
 }) => {
   const card = `
   <div class="popup-card">
+        <i class="fa-solid fa-xmark"></i>
         <div class="img-box">
           <img src="${image.original}" alt="" />
         </div>
         <div class="text-box">
           <h2>${name}</h2>
           ${summary}
+          <div class="movie-details">
           <div class="flex-grp">
             <div>
               <h4>Genres :</h4>
@@ -43,7 +45,11 @@ const temp = ({
               <h4>Language :</h4>
               <p>${language}</p>
             </div>
-            <p></p>
+            <div>
+              <h4>Status :</h4>
+              <p>${status}</p>
+            </div>
+          </div>
           </div>
         </div>
       </div>
