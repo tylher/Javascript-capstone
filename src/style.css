@@ -58,6 +58,11 @@ main {
   opacity: 1;
 }
 
+footer p {
+  color: rgb(172, 172, 172);
+  font-weight: 300;
+}
+
 .cards {
   flex-wrap: wrap;
   display: flex;
@@ -177,11 +182,6 @@ footer {
   position: fixed;
   width: 100%;
   bottom: 0;
-}
-
-footer p {
-  color: rgb(172, 172, 172);
-  font-weight: 300;
 }
 
 .socials-holder {

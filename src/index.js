@@ -3,6 +3,7 @@ import './style.css';
 const displayItem = (results) => {
   const card = document.querySelector('.cards');
   card.innerHTML = '';
+  const like = 0;
   results.forEach((item) => {
     const scoreLi = document.createElement('div');
     scoreLi.className = 'card';
@@ -65,10 +66,10 @@ const displayhomeItem = (result) => {
   });
 };
 
-const BASE_URL = `https://api.tvmaze.com/search/shows?q=blac`;
-  fetch(BASE_URL)
+const BASE_URL = 'https://api.tvmaze.com/search/shows?q=blac';
+fetch(BASE_URL)
   .then((respose) => respose.json())
   .then((jsonData) => {
-   const result = jsonData.map((item) => item.show);
+    const result = jsonData.map((item) => item.show);
     displayhomeItem(result);
-    })
+  });
