@@ -51,6 +51,19 @@ const temp = ({
             </div>
           </div>
           </div>
+          <section class="comments">
+          <div class="show-comments">
+          <h3>Comments</h3>
+          <ul class='comments-holder'></ul>
+          </div>
+          <div class="add-comment">
+            <h3>Add new comment</h3>
+            <form>
+             <input type="text" place-holder="Your name">
+             <textarea palace-holder="Your insight" ></textarea>
+            </form>
+          </div>
+         <section>
         </div>
       </div>
   `;
