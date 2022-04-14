@@ -8,23 +8,27 @@ li {
   list-style: none;
 }
 
-body {
-  position: relative;
-  bottom: 30px;
-}
-
 .fa-star {
   font-size: 18px;
+  color: orange;
 }
 
 .star-rating {
   width: 100px;
+  position: relative;
 }
 
-.star-rating-group {
+.inner-star-rating {
   display: flex;
+  position: absolute;
   flex-wrap: nowrap;
   overflow: hidden;
+  top:0;
+}
+
+.outer-star-rating{
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .popup {
@@ -37,6 +41,7 @@ body {
   display: flex;
   align-items: center;
   border-radius: 20px;
+  z-index: 1;
 }
 
 .popup-card {
@@ -92,4 +97,6 @@ body {
 
 .flex-grp > div {
   display: flex;
+  align-items: center;
+  gap: 3px;
 }

@@ -28,7 +28,6 @@ const searchShow = (query) => {
     .then((respose) => respose.json())
     .then((jsonData) => {
       const results = jsonData.map((item) => item.show);
-      console.log(results);
       displayItem(results);
       const commentBtn = document.querySelectorAll('.comment-btn');
       commentBtn.forEach((comment) => {
@@ -36,7 +35,6 @@ const searchShow = (query) => {
           const NAME = e.target.parentElement.childNodes[0].innerHTML;
           results.map((item) => {
             if (NAME === item.name) {
-              console.log(item.id);
               displayPopUp(item.id);
             }
             return '';
