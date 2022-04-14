@@ -76,8 +76,8 @@ footer p {
   justify-content: center;
   background: rgba(39, 39, 39, 0.274);
   backdrop-filter: blur(2rem);
-  width: 22%;
-  margin: 13px;
+  width: 23%;
+  margin: 10px;
 }
 
 .card p {
@@ -116,7 +116,8 @@ footer p {
   color: rgb(224, 224, 224);
 }
 
-.reservation-btn,.comment-btn {
+.reservation-btn,
+.comment-btn {
   border: none;
   padding: 3px 6px;
   margin-left: 7px;
@@ -138,10 +139,10 @@ header {
   align-items: center;
   padding: 20px 5%;
   position: fixed;
-  z-index: 100;
+  z-index: 10;
 }
 
-input {
+header input {
   width: 23%;
   padding: 10px 30px;
   font-size: 0.9em;

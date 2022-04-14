@@ -40,7 +40,7 @@ const displayPopUp = async (id) => {
     popup.innerHTML = '';
     popup.classList.remove('d-none');
     popup.style.width = '80%';
-    popup.style.zIndex = '1';
+    popup.style.zIndex = '200';
     renderPopUp(temp(data));
     backgroundBlur();
   });

@@ -2,7 +2,7 @@ const temp = ({
   genres, image, language, summary, name, rating, status,
 }) => {
   const card = `
-  <div class="popup-card">
+      <div class="popup-card">
         <i class="fa-solid fa-xmark"></i>
         <div class="img-box">
           <img src="${image.original}" alt="" />
@@ -74,6 +74,8 @@ const temp = ({
 
   return card;
 };
+
+// const id = 'jvrwtpOKv3EF9dzf4scl';
 
 function renderPopUp(func) {
   const popup = document.querySelector('.popup');
