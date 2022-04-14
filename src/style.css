@@ -34,34 +34,75 @@ main {
 }
 
 .title {
-  font-size: 35px;
-  margin-top: 5rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.title h1 {
+  font-size: 65px;
+}
+
+.title h5 {
+  font-size: 30px;
+  color: #ffac31;
+  margin-bottom: 20px;
 }
 
 .none {
-  display: none;
+  width: 0;
+  opacity: 0;
 }
 
 .block {
-  display: block;
+  width: 100%;
+  opacity: 1;
 }
 
 .cards {
   flex-wrap: wrap;
-  width: 100%;
   display: flex;
 }
 
 .card {
   overflow: hidden;
-  padding: 10px 0;
   text-align: start;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: rgb(39, 39, 39);
+  background: rgba(39, 39, 39, 0.274);
+  backdrop-filter: blur(2rem);
   width: 22%;
   margin: 13px;
+}
+
+.card p {
+  margin-top: 5px;
+}
+
+.card img {
+  border-bottom-right-radius: 60px;
+}
+
+.home_cards {
+  flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+}
+
+.home_cards .card {
+  overflow: hidden;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(39, 39, 39, 0.274);
+  backdrop-filter: blur(2rem);
+  width: 19%;
+  margin: 5px;
+}
+
+.home_cards p {
+  margin-top: 5px;
 }
 
 .movi-title {
@@ -74,11 +115,14 @@ main {
   border: none;
   padding: 3px 6px;
   margin-left: 7px;
-  margin-top: 20px;
   margin-bottom: 10px;
   width: 40%;
-  background-color: #ffac31;
-
+  background-color: #ff9f31;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
 header {
@@ -89,6 +133,7 @@ header {
   align-items: center;
   padding: 20px 5%;
   position: fixed;
+  z-index: 100;
 }
 
 input {
@@ -97,6 +142,8 @@ input {
   font-size: 0.9em;
   border: none;
   border-radius: 20px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.801);
 }
 
 .page-navigation {
@@ -126,7 +173,7 @@ footer {
   display: flex;
   gap: 30px;
   align-items: center;
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.336), rgb(0, 0, 0));
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), rgb(0, 0, 0));
   position: fixed;
   width: 100%;
   bottom: 0;
