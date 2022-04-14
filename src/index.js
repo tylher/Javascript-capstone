@@ -3,7 +3,6 @@ import './popup.css';
 import { temp, renderPopUp } from './modules/popup.js';
 import getShow from './modules/get-show.js';
 
-
 const displayItem = (results) => {
   const card = document.querySelector('.cards');
   card.innerHTML = '';
@@ -35,7 +34,6 @@ const backgroundBlur = () => {
   });
 };
 
-
 const displayPopUp = async (id) => {
   const popup = document.querySelector('.popup');
   await getShow(id).then((data) => {
@@ -46,9 +44,6 @@ const displayPopUp = async (id) => {
     backgroundBlur();
   });
 };
-
-
-
 
 const searchShow = async (query) => {
   const BASE_URL = `https://api.tvmaze.com/search/shows?q=${query}`;
