@@ -65,10 +65,10 @@ const displayhomeItem = (result) => {
   });
 };
 
-const BASE_URL = `https://api.tvmaze.com/search/shows?q=blac`;
-  fetch(BASE_URL)
+const BASE_URL = 'https://api.tvmaze.com/search/shows?q=blac';
+fetch(BASE_URL)
   .then((respose) => respose.json())
   .then((jsonData) => {
-   const result = jsonData.map((item) => item.show);
+    const result = jsonData.map((item) => item.show);
     displayhomeItem(result);
-    })
+  });
