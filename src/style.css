@@ -39,11 +39,11 @@ main {
 }
 
 .none {
-  font-size: 0;
+  display: none;
 }
 
 .block {
-  font-size: 35px;
+  display: block;
 }
 
 .cards {

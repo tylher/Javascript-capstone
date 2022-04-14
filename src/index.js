@@ -39,7 +39,7 @@ const searchShow = (query) => {
     })
     .catch(() => {
       displayItem([]);
-    });
+    })
 };
 
 const acceil = document.querySelector('.title');
@@ -52,13 +52,14 @@ window.onload = () => {
       return;
     }
 
-    if (searchArea.value !== '') {
+    if(searchArea.value !== ''){
       acceil.classList.add('none');
-      acceil.classList.remove('block');
-    } else {
-      acceil.classList.add('block');
-      acceil.classList.remove('none');
+      acceil.classList.remove('block')
+    }else {
+      acceil.classList.add('block')
+      acceil.classList.remove('none')
     }
+    console.log(searchArea.value)
     setTimeoutTOken = setTimeout(() => {
       searchShow(searchArea.value);
     }, 250);
