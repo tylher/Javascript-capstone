@@ -116,8 +116,6 @@ const displayhomeItem = (result) => {
                          </div>`;
     card.appendChild(scoreLi);
   });
-  const cards = document.querySelectorAll('.card');
-console.log(cards.length)
 };
 
 const BASE_URL = 'https://api.tvmaze.com/search/shows?q=blac';
