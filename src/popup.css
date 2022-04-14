@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.fa-star {
+  font-size: 18px;
+  color: orange;
+}
+
+.star-rating {
+  width: 100px;
+  position: relative;
+}
+
+.inner-star-rating {
+  display: flex;
+  position: absolute;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  top:0;
+}
+
+.outer-star-rating{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: white;
+  z-index: -1;
+  margin: 50px 10%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  background-color: rgb(15, 1, 15);
+  overflow: hidden;
+}
+
+
+
+.popup-card {
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  padding: 20px ;
+  height: 450px;
+}
+
+.popup-card::-webkit-scrollbar {
+  width: 10px;
+}
+
+.popup-card::-webkit-scrollbar-track {
+  background-color: yellow;
+  border-radius: 5px;
+}
+
+.popup-card::-webkit-scrollbar-thumb {
+  background-color: red;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.fa-xmark{
+   position: absolute;
+   font-size: 50px;
+   right: 50px;
+}
+
+.img-box {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
+
+.img-box img {
+  max-width: 100%;
+  max-height: 600px;
+  margin: 0 auto;
+}
+
+.text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0 40px;
+  width: 100%;
+}
+
+.text-box > p {
+  text-align: center;
+}
+
+.genres {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.movie-details{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.flex-grp {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.flex-grp > div {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.d-none{
+    display: none;
+}
+
+.cover{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(14, 12, 12, 0.856);
+  filter: blur(8px);
+  min-height: 300vh;
+  width: 100%;
+  display: none;
+}
+
+.d-block{
+  display: block;
+}
