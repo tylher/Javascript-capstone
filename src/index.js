@@ -48,6 +48,10 @@ let setTimeoutTOken = 0;
 window.onload = () => {
   clearTimeout(setTimeoutTOken);
   searchArea.onkeyup = () => {
+    if (searchArea.value.trim().legth === 0) {
+      return;
+    }
+
     if (searchArea.value !== '') {
       acceil.classList.add('none');
       acceil.classList.remove('block');

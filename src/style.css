@@ -91,6 +91,7 @@ header {
   position: fixed;
 }
 
+<<<<<<< HEAD
 .icon-input {
   position: relative;
   width: 30%;
@@ -100,13 +101,17 @@ header {
 
 .icon-input input {
   width: 100%;
+=======
+input {
+  width: 23%;
+>>>>>>> parent of ffa9c01 (Modified the content)
   padding: 10px 30px;
   font-size: 0.9em;
   border: none;
-  outline: none;
   border-radius: 20px;
 }
 
+<<<<<<< HEAD
 .icon-input i {
   color: black;
   position: absolute;
@@ -114,6 +119,8 @@ header {
   margin-right: 20px;
 }
 
+=======
+>>>>>>> parent of ffa9c01 (Modified the content)
 .page-navigation {
   display: flex;
   justify-content: center;
