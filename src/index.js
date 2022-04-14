@@ -1,4 +1,8 @@
 import './style.css';
+import './popup.css';
+import { temp, renderPopUp } from './modules/popup.js';
+import getShow from './modules/get-show.js';
+
 
 const displayItem = (results) => {
   const card = document.querySelector('.cards');
@@ -16,6 +20,35 @@ const displayItem = (results) => {
     card.appendChild(scoreLi);
   });
 };
+
+const backgroundBlur = () => {
+  const popup = document.querySelector('.popup');
+  const cover = document.querySelector('.cover');
+  const body = document.querySelector('body');
+  cover.classList.add('d-block');
+  body.style.overflow = 'hidden';
+  const closeBtn = document.querySelector('.fa-xmark');
+  closeBtn.addEventListener('click', () => {
+    popup.classList.add('d-none');
+    cover.classList.remove('d-block');
+    body.style.overflowY = 'scroll';
+  });
+};
+
+
+const displayPopUp = async (id) => {
+  const popup = document.querySelector('.popup');
+  await getShow(id).then((data) => {
+    popup.innerHTML = '';
+    popup.classList.remove('d-none');
+    popup.style.zIndex = '1';
+    renderPopUp(temp(data));
+    backgroundBlur();
+  });
+};
+
+
+
 
 const searchShow = async (query) => {
   const BASE_URL = `https://api.tvmaze.com/search/shows?q=${query}`;
