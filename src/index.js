@@ -4,12 +4,12 @@ import './media.css';
 import { temp, renderPopUp } from './modules/popup.js';
 import getShow from './modules/get-show.js';
 import displayComment from './modules/commentTemp.js';
+import { getLikes, LikeItem } from './modules/save-get-likes';
 
 const card = document.querySelector('.cards');
 const numberItem = document.querySelector('.number');
 const displayItem = (results) => {
   card.innerHTML = '';
-  const like = false;
   results.forEach((item) => {
     const scoreLi = document.createElement('div');
     scoreLi.className = 'card';
@@ -17,7 +17,7 @@ const displayItem = (results) => {
                          <p class="movi-title">${item.name}</p>
                          <div>
                          <button type="submit" class="comment-btn">Comment</button>
-                         ${like ? '<i class="fa-solid fa-heart"></i>' : '<i class="fa-regular fa-heart"></i>'}
+                          <i class="fa-regular fa-heart"></i>
                          </div>`;
     card.appendChild(scoreLi);
   });
@@ -106,7 +106,6 @@ window.onload = () => {
 
 const displayhomeItem = (result) => {
   const card = document.querySelector('.home_cards');
-  const like = false;
   card.innerHTML = '';
   result.forEach((item) => {
     const scoreLi = document.createElement('div');
@@ -115,7 +114,7 @@ const displayhomeItem = (result) => {
                          <p class="movi-title">${item.name}</p>
                          <div>
                          <button type="submit" class="comment-btn">Comment</button>
-                         ${like ? '<i class="fa-solid fa-heart"></i>' : '<i class="fa-regular fa-heart"></i>'}
+                         <i class="fa-regular fa-heart"></i><span class='likes-num'></span>
                          </div>`;
     card.appendChild(scoreLi);
   });
@@ -127,6 +126,29 @@ fetch(BASE_URL)
   .then((jsonData) => {
     const result = jsonData.map((item) => item.show);
     displayhomeItem(result);
+    const likes = document.querySelectorAll('.fa-heart');
+    likes.forEach((like) => {
+      like.addEventListener('click', async (e) => {
+        const NAME = e.target.parentElement.parentElement.childNodes[2].textContent;
+        result.map(async (item) => {
+          if (NAME === item.name) {
+            await LikeItem(item.id).then((res) => {
+              if (res.ok === true) {
+                getLikes().then((data) => {
+                  // eslint-disable-next-line camelcase
+                  const mov = data.find(({ item_id }) => item_id === item.id);
+                  const itemIndex = data.indexOf(mov);
+                  const numLikes = document.querySelectorAll('.likes-num');
+                  numLikes[itemIndex].textContent = mov.likes;
+                });
+              }
+            });
+          }
+          return '';
+        });
+      });
+      return '';
+    });
     const commentBtn = document.querySelectorAll('.comment-btn');
     commentBtn.forEach((comment) => {
       comment.addEventListener('click', (e) => {
