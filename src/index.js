@@ -20,7 +20,7 @@ const displayItem = (results) => {
     card.appendChild(scoreLi);
   });
   const cards = document.querySelectorAll('.card');
-  numberItem.textContent = cards.length - 10;
+  numberItem.textContent = cards.length - 9;
 };
 
 const backgroundBlur = () => {
