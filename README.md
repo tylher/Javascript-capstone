@@ -1,56 +1,100 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Leaderboard
 
-> Description the project.
-
+> This project is the second capstone project from Microverse. We had to select an API that provides data about a topic that you like and then build the webapp around it. The webapp will have 2 or 3 user interfaces (depending on the size of your team)
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Html
+- Csss
+- Js
+- Technologies used:
+  > webpack
+  > AJAX
+  > API
+  > Gitflow
 
-## Live Demo (if available)
+## live
 
-[Live Demo Link](https://livedemo.com)
+|     | SHOWNET                                                                                                                                |     |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------- | --- |
+|     | ![Annotation 2022-04-14 202649](https://user-images.githubusercontent.com/57408419/163536316-0235b1a2-b04b-4df8-9f98-d8b937d38d4c.jpg) |     |
 
+<!-- ## [live demo](https://joel-kalema.github.io/Leaderboard/) -->
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
+
+You need to have a browser and this tools installed:
+
+- Git
+- NodeJS
 
 ### Setup
 
-### Install
+To get a local copy up and running follow these simple example steps:
+
+```
+$ git clone git@github.com:jssol/api-based-webapp.git
+```
+
+```
+$ cd api-based-webapp
+```
+
+```
+$ npm i
+```
+
+```
+$ npm start
+```
 
 ### Usage
 
+To build a version of the website under Development mode:
+
+```
+$ npm run dev
+```
+
+To build the production version:
+
+```
+$ npm run build
+```
+
 ### Run tests
+
+To run tests in terminal use:
+
+```
+npm test
+```
 
 ### Deployment
 
+To deploy the project to Githubpages run:
 
+```
+npm run deploy
+```
 
 ## Authors
 
-👤 **Author1**
+👤 **Taiwo Damola Adediran**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@tylher](https://github.com/tylher)
+- Twitter: [@tylher123](https://twitter.com/tylher123)
+- LinkedIn: [Taiwo Adediran](https://www.linkedin.com/in/taiwo-adediran-327654127/)
 
-👤 **Author2**
+👤 **JOEL KALEMA**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@joel-kalema](https://github.com/joel-kalema)
+- Twitter: [@JoelJklm](https://www.linkedin.com/in/joel-kalema-30518a230/)
+- LinkedIn: [joel kalema](https://twitter.com/JoelJklm)
 
 ## 🤝 Contributing
 
