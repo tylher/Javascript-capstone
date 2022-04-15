@@ -4,10 +4,30 @@ import './media.css';
 import { temp, renderPopUp } from './modules/popup.js';
 import getShow from './modules/get-show.js';
 import displayComment from './modules/commentTemp.js';
-import { getLikes, LikeItem } from './modules/save-get-likes';
+import { updateLikes } from './modules/save-get-likes.js';
 
 const card = document.querySelector('.cards');
 const numberItem = document.querySelector('.number');
+const acceil = document.querySelector('.title');
+const searchArea = document.querySelector('.Search');
+const homecard = document.querySelector('.home_cards');
+const displayhomeItem = (result) => {
+  homecard.innerHTML = '';
+  result.forEach((item) => {
+    const scoreLi = document.createElement('div');
+    scoreLi.className = 'card';
+    scoreLi.innerHTML = `<img src="${item.image.medium}">
+                         <p class="movi-title">${item.name}</p>
+                         <div>
+                         <button type="submit" class="comment-btn">Comment</button>
+                         <i class="fa-regular fa-heart"></i><span class='likes-num'>0</span>
+                         </div>`;
+    homecard.appendChild(scoreLi);
+  });
+  const cards = document.querySelectorAll('.card');
+  numberItem.textContent = cards.length;
+};
+
 const displayItem = (results) => {
   card.innerHTML = '';
   results.forEach((item) => {
@@ -17,12 +37,12 @@ const displayItem = (results) => {
                          <p class="movi-title">${item.name}</p>
                          <div>
                          <button type="submit" class="comment-btn">Comment</button>
-                          <i class="fa-regular fa-heart"></i>
+                          <i class="fa-regular fa-heart"></i><span class='likes-num'>0</span>
                          </div>`;
     card.appendChild(scoreLi);
   });
   const cards = document.querySelectorAll('.card');
-  numberItem.textContent = cards.length - 10;
+  numberItem.textContent = cards.length;
 };
 
 const backgroundBlur = () => {
@@ -59,6 +79,11 @@ const searchShow = async (query) => {
     .then((jsonData) => {
       const results = jsonData.map((item) => item.show);
       displayItem(results);
+      // results.map((item) => {
+      //   displayLikes(results);
+      //   return '';
+      // });
+      updateLikes(results);
       const commentBtn = document.querySelectorAll('.comment-btn');
       commentBtn.forEach((comment) => {
         comment.addEventListener('click', (e) => {
@@ -77,21 +102,39 @@ const searchShow = async (query) => {
     });
 };
 
-const acceil = document.querySelector('.title');
-const searchArea = document.querySelector('.Search');
+const displayHomePage = () => {
+  const BASE_URL = 'https://api.tvmaze.com/search/shows?q=a';
+  fetch(BASE_URL)
+    .then((respose) => respose.json())
+    .then((jsonData) => {
+      const result = jsonData.map((item) => item.show);
+      displayhomeItem(result);
+      updateLikes(result);
+      const commentBtn = document.querySelectorAll('.comment-btn');
+      commentBtn.forEach((comment) => {
+        comment.addEventListener('click', (e) => {
+          const NAME = e.target.parentElement.parentElement.childNodes[2].textContent;
+          result.map((item) => {
+            if (NAME === item.name) {
+              displayPopUp(item.id);
+            }
+            return '';
+          });
+        });
+      });
+    });
+};
+
 let setTimeoutTOken = 0;
 window.onload = () => {
   clearTimeout(setTimeoutTOken);
   searchArea.onkeyup = () => {
-    if (searchArea.value.trim().legth === 0) {
-      return;
-    }
-
     if (searchArea.value !== '') {
       card.classList.add('block');
       card.classList.remove('none');
       acceil.classList.add('none');
       acceil.classList.remove('block');
+      homecard.innerHTML = '';
     } else {
       card.classList.add('none');
       card.classList.remove('block');
@@ -104,61 +147,11 @@ window.onload = () => {
   };
 };
 
-const displayhomeItem = (result) => {
-  const card = document.querySelector('.home_cards');
-  card.innerHTML = '';
-  result.forEach((item) => {
-    const scoreLi = document.createElement('div');
-    scoreLi.className = 'card';
-    scoreLi.innerHTML = `<img src="${item.image.medium}">
-                         <p class="movi-title">${item.name}</p>
-                         <div>
-                         <button type="submit" class="comment-btn">Comment</button>
-                         <i class="fa-regular fa-heart"></i><span class='likes-num'></span>
-                         </div>`;
-    card.appendChild(scoreLi);
-  });
-};
+searchArea.addEventListener('input', (e) => {
+  e.preventDefault();
+  if (e.target.value.trim() === '') {
+    displayHomePage();
+  }
+});
 
-const BASE_URL = 'https://api.tvmaze.com/search/shows?q=a';
-fetch(BASE_URL)
-  .then((respose) => respose.json())
-  .then((jsonData) => {
-    const result = jsonData.map((item) => item.show);
-    displayhomeItem(result);
-    const likes = document.querySelectorAll('.fa-heart');
-    likes.forEach((like) => {
-      like.addEventListener('click', async (e) => {
-        const NAME = e.target.parentElement.parentElement.childNodes[2].textContent;
-        result.map(async (item) => {
-          if (NAME === item.name) {
-            await LikeItem(item.id).then((res) => {
-              if (res.ok === true) {
-                getLikes().then((data) => {
-                  // eslint-disable-next-line camelcase
-                  const mov = data.find(({ item_id }) => item_id === item.id);
-                  const itemIndex = data.indexOf(mov);
-                  const numLikes = document.querySelectorAll('.likes-num');
-                  numLikes[itemIndex].textContent = mov.likes;
-                });
-              }
-            });
-          }
-          return '';
-        });
-      });
-      return '';
-    });
-    const commentBtn = document.querySelectorAll('.comment-btn');
-    commentBtn.forEach((comment) => {
-      comment.addEventListener('click', (e) => {
-        const NAME = e.target.parentElement.parentElement.childNodes[2].textContent;
-        result.map((item) => {
-          if (NAME === item.name) {
-            displayPopUp(item.id);
-          }
-          return '';
-        });
-      });
-    });
-  });
+displayHomePage();

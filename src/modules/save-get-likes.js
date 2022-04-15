@@ -24,26 +24,33 @@ const getLikes = async () => {
   return likes;
 };
 
-const displayLikes = (id) => {
+const displayLikes = async (result) => {
+  const likes = document.querySelectorAll('.likes-num');
   getLikes().then((data) => {
-    // eslint-disable-next-line camelcase
-    const mov = data.find(({ item_id }) => item_id === id);
-    const itemIndex = data.indexOf(mov);
-    const numLikes = document.querySelectorAll('.likes-num');
-    numLikes[itemIndex].textContent = mov.likes;
+    result.forEach((item, i) => {
+      // eslint-disable-next-line camelcase
+      const mov = data.find(({ item_id }) => item_id === item.id);
+      if (mov !== undefined) {
+        likes[i].textContent = mov.likes;
+      }
+      // console.log(mov);
+      // likes[i].textContent = mov.likes;
+    });
   });
 };
 
-const updateLikes = (result, id) => {
+const updateLikes = (result) => {
+  displayLikes(result);
   const likes = document.querySelectorAll('.fa-heart');
   likes.forEach((like) => {
     like.addEventListener('click', async (e) => {
+      e.preventDefault();
       const NAME = e.target.parentElement.parentElement.childNodes[2].textContent;
-      result.map(async (item) => {
+      result.map((item) => {
         if (NAME === item.name) {
-          await LikeItem(item.id).then((res) => {
+          LikeItem(item.id).then((res) => {
             if (res.ok === true) {
-              displayLikes(id);
+              displayLikes(result);
             }
           });
         }

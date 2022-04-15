@@ -51,12 +51,12 @@ main {
 .none {
   width: 0;
   height: 0;
-  opacity: 0;
+  display: none;
 }
 
 .block {
   width: 100%;
-  opacity: 1;
+ display: block;
 }
 
 footer p {
@@ -70,7 +70,7 @@ footer p {
 }
 
 .card {
-  overflow: hidden;
+  /* overflow: hidden; */
   text-align: start;
   display: flex;
   flex-direction: column;
