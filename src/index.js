@@ -1,5 +1,6 @@
 import './style.css';
 import './popup.css';
+import './media.css';
 import { temp, renderPopUp } from './modules/popup.js';
 import getShow from './modules/get-show.js';
 
@@ -20,7 +21,7 @@ const displayItem = (results) => {
     card.appendChild(scoreLi);
   });
   const cards = document.querySelectorAll('.card');
-  numberItem.textContent = cards.length - 9;
+  numberItem.textContent = cards.length - 10;
 };
 
 const backgroundBlur = () => {
@@ -118,7 +119,7 @@ const displayhomeItem = (result) => {
   });
 };
 
-const BASE_URL = 'https://api.tvmaze.com/search/shows?q=blac';
+const BASE_URL = 'https://api.tvmaze.com/search/shows?q=a';
 fetch(BASE_URL)
   .then((respose) => respose.json())
   .then((jsonData) => {

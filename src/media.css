@@ -1,0 +1,47 @@
+@media only screen and (max-width: 375px) {
+  header {
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 5%;
+    position: fixed;
+    z-index: 10;
+  }
+
+  .card {
+    width: 100%;
+    margin: 10px;
+  }
+
+  .seach {
+    margin-top: 10px;
+    width: 80%;
+  }
+
+  .title h5 {
+    font-size: 20px;
+  }
+
+  .home_cards {
+    flex-direction: column;
+    display: flex;
+  }
+
+  .home_cards .card {
+    width: 100%;
+  }
+
+  .cards {
+    flex-direction: column;
+    display: flex;
+  }
+
+  footer {
+    flex-direction: column;
+    padding-bottom: 15px;
+  }
+
+  .socials li {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
