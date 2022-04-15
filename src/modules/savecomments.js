@@ -2,7 +2,7 @@ const BASE_URL = 'https://us-central1-involvement-api.cloudfunctions.net/capston
 const appId = 'jvrwtpOKv3EF9dzf4scl';
 
 const saveComment = async (id, name, myComment) => {
-  await fetch(`${BASE_URL}apps/${appId}/comments`, {
+  const save = await fetch(`${BASE_URL}apps/${appId}/comments`, {
     method: 'POST',
     body: [
       JSON.stringify({
@@ -14,17 +14,19 @@ const saveComment = async (id, name, myComment) => {
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
-  }).then((resp) => resp.json());
+  }).then((resp) => resp);
+  return save;
 };
 
 const getComments = async (id) => {
-  await fetch(
-    `${BASE_URL}apps/${appId}/comments?item_id=${id}`, {
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
+  const URL = `${BASE_URL}apps/${appId}/comments?item_id=${id}`;
+  const comm = await fetch(URL, {
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
     },
-  ).then((res) => res.json());
+  }).then((res) => res.json());
+
+  return comm;
 };
 
 export { saveComment, getComments };

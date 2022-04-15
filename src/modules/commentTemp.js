@@ -4,22 +4,34 @@ import UserDetails from './userdetails.js';
 
 const displayComment = (id) => {
   const submitComment = document.querySelector('button[type="button"]');
-
+  const commentsHolder = document.querySelector('.comments-holder');
+  getComments(id).then((data) => {
+    data.map((item) => {
+      const temp = `<li>${item.creation_date} ${item.username} : ${item.comment} </li>`;
+      commentsHolder.innerHTML += temp;
+      return '';
+    });
+  });
   submitComment.addEventListener('click', async () => {
     const name = document.querySelector('.username');
     const comment = document.querySelector('.usercomment');
-    const user = new UserDetails(name.value, comment.value);
-    const commentsHolder = document.querySelector('.comments-holder');
-    saveComment(id, user.name, user.comment);
-    setTimeout(await getComments(id).then((data) => {
-      console.log(data);
-      console.log('ok');
-      data.map((item) => {
-        const temp = `<li>${item.creation_date} ${item.username} : ${item.comment} </li>`;
-        commentsHolder.appendChild(temp);
-        return '';
+    if (name.value.trim().length !== 0 && comment.value.trim().length !== 0) {
+      const user = new UserDetails(name.value, comment.value);
+      name.value = '';
+      comment.value = '';
+      saveComment(id, user.name, user.comment).then((res) => {
+        if (res.ok) {
+          commentsHolder.innerHTML = '';
+          getComments(id).then((data) => {
+            data.map((item) => {
+              const temp = `<li>${item.creation_date} ${item.username} : ${item.comment} </li>`;
+              commentsHolder.innerHTML += temp;
+              return '';
+            });
+          });
+        }
       });
-    }), 2000);
+    }
   });
 };
 
