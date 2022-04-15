@@ -1,16 +1,18 @@
 /* eslint-disable camelcase */
 import { getComments, saveComment } from './savecomments.js';
 import UserDetails from './userdetails.js';
+import displayCommentLength from './commentlength.js';
 
 const displayComment = (id) => {
   const submitComment = document.querySelector('button[type="button"]');
   const commentsHolder = document.querySelector('.comments-holder');
   getComments(id).then((data) => {
     data.map((item) => {
-      const temp = `<li>${item.creation_date} ${item.username} : ${item.comment} </li>`;
+      const temp = `<li class='comment-item'>${item.creation_date} ${item.username} : ${item.comment} </li>`;
       commentsHolder.innerHTML += temp;
       return '';
     });
+    displayCommentLength();
   });
   submitComment.addEventListener('click', async () => {
     const name = document.querySelector('.username');

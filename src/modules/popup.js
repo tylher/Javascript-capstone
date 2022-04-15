@@ -56,7 +56,7 @@ const temp = ({
           </div>
           <section class="comments">
             <div class="show-comments">
-              <h3>Comments</h3>
+              <h3 class='title()'>Comments</h3>
               <ul class="comments-holder"></ul>
             </div>
             <div class="add-comment">
