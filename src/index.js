@@ -2,6 +2,7 @@ import './style.css';
 import './popup.css';
 import { temp, renderPopUp } from './modules/popup.js';
 import getShow from './modules/get-show.js';
+import displayComment from './modules/commentTemp.js';
 
 const card = document.querySelector('.cards');
 const numberItem = document.querySelector('.number');
@@ -46,6 +47,7 @@ const displayPopUp = async (id) => {
     popup.style.zIndex = '200';
     renderPopUp(temp(data));
     backgroundBlur();
+    displayComment(id);
   });
 };
 
@@ -118,7 +120,7 @@ const displayhomeItem = (result) => {
   });
 };
 
-const BASE_URL = 'https://api.tvmaze.com/search/shows?q=blac';
+const BASE_URL = 'https://api.tvmaze.com/search/shows?q=a';
 fetch(BASE_URL)
   .then((respose) => respose.json())
   .then((jsonData) => {

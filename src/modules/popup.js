@@ -56,15 +56,15 @@ const temp = ({
           </div>
           <section class="comments">
             <div class="show-comments">
-              <h3>Comments</h3>
+              <h3 class='title()'>Comments</h3>
               <ul class="comments-holder"></ul>
             </div>
             <div class="add-comment">
               <h3>Add new comment</h3>
               <form>
-                <input type="text" placeholder="Your name" />
-                <textarea placeholder="Your insight"></textarea>
-                <button type="submit">Comment</button>
+                <input type="text" class="username" placeholder="Your name" />
+                <textarea class="usercomment" placeholder="Your insight"></textarea>
+                <button type="button">Comment</button>
               </form>
             </div>
           </section>
