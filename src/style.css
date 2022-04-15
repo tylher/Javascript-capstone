@@ -48,16 +48,6 @@ main {
   margin-bottom: 20px;
 }
 
-.number {
-  background-color: #090457;
-  padding: 1px 7px;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-}
-
 .none {
   width: 0;
   height: 0;
@@ -153,8 +143,27 @@ header {
   z-index: 10;
 }
 
-header input {
+.seach {
   width: 23%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e28205;
+  padding: 1px 7px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+header input {
+  width: 85%;
   padding: 10px 30px;
   font-size: 0.9em;
   border: none;

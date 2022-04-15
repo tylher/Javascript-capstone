@@ -1,5 +1,6 @@
 import './style.css';
 import './popup.css';
+import './media.css';
 import { temp, renderPopUp } from './modules/popup.js';
 import getShow from './modules/get-show.js';
 import displayComment from './modules/commentTemp.js';
@@ -21,7 +22,7 @@ const displayItem = (results) => {
     card.appendChild(scoreLi);
   });
   const cards = document.querySelectorAll('.card');
-  numberItem.textContent = cards.length - 9;
+  numberItem.textContent = cards.length - 10;
 };
 
 const backgroundBlur = () => {
