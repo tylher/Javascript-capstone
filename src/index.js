@@ -2,10 +2,8 @@ import './style.css';
 import './popup.css';
 import { temp, renderPopUp } from './modules/popup.js';
 import getShow from './modules/get-show.js';
-import { DateTime } from './modules/luxon.js';
-import { saveComment, getComments } from './modules/savecomments.js';
+import displayComment from './modules/commentTemp.js';
 
-console.log(DateTime.local().ts);
 const card = document.querySelector('.cards');
 const displayItem = (results) => {
   card.innerHTML = '';
@@ -46,6 +44,7 @@ const displayPopUp = async (id) => {
     popup.style.zIndex = '200';
     renderPopUp(temp(data));
     backgroundBlur();
+    displayComment(id);
   });
 };
 
@@ -118,7 +117,7 @@ const displayhomeItem = (result) => {
   });
 };
 
-const BASE_URL = 'https://api.tvmaze.com/search/shows?q=blac';
+const BASE_URL = 'https://api.tvmaze.com/search/shows?q=a';
 fetch(BASE_URL)
   .then((respose) => respose.json())
   .then((jsonData) => {
