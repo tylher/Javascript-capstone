@@ -2,7 +2,10 @@ import './style.css';
 import './popup.css';
 import { temp, renderPopUp } from './modules/popup.js';
 import getShow from './modules/get-show.js';
+import { DateTime } from './modules/luxon.js';
+import { saveComment, getComments } from './modules/savecomments.js';
 
+console.log(DateTime.local().ts);
 const card = document.querySelector('.cards');
 const displayItem = (results) => {
   card.innerHTML = '';
