@@ -79,10 +79,6 @@ const searchShow = async (query) => {
     .then((jsonData) => {
       const results = jsonData.map((item) => item.show);
       displayItem(results);
-      // results.map((item) => {
-      //   displayLikes(results);
-      //   return '';
-      // });
       updateLikes(results);
       const commentBtn = document.querySelectorAll('.comment-btn');
       commentBtn.forEach((comment) => {
