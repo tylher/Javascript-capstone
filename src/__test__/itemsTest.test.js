@@ -30,4 +30,10 @@ describe('test item add functionality', () => {
     addItem();
     expect(document.querySelector('.home_cards').children.length).toBe(1);
   });
+
+  test('Add more items', () => {
+    addItem();
+    addItem();
+    expect(document.querySelector('.home_cards').children.length).toBe(3);
+  });
 });
