@@ -151,3 +151,5 @@ searchArea.addEventListener('input', (e) => {
 });
 
 displayHomePage();
+
+export default displayItem;
