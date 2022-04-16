@@ -90,7 +90,7 @@ npm run deploy
 - LinkedIn: [Taiwo Adediran](https://www.linkedin.com/in/taiwo-adediran-327654127/)
 
 👤 <a href="https://github.com/joel-kalema" target="blank"><img align="center"
-      src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg"
+      src="https://user-images.githubusercontent.com/57408419/163676914-ad94695e-ba9f-4fea-9a06-02a93c7797a5.jpg"
       alt="adampithewan" height="30" width="40" /></a> **JOEL KALEMA**
 
 - GitHub: [@joel-kalema](https://github.com/joel-kalema)
