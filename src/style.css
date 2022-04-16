@@ -76,7 +76,7 @@ footer p {
   display: flex;
   margin: 0 auto;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
   gap: 20px;
 }
 
@@ -87,7 +87,7 @@ footer p {
   justify-content: center;
   background: rgba(39, 39, 39, 0.274);
   backdrop-filter: blur(2rem);
-  width: 23%;
+  width: 19%;
 }
 
 .card p {
@@ -127,7 +127,7 @@ footer p {
   justify-content: center;
   background: rgba(39, 39, 39, 0.274);
   backdrop-filter: blur(2rem);
-  width: 23%;
+  width: 19%;
   font-size: 1.2em;
 }
 
