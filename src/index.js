@@ -5,7 +5,6 @@ import { temp, renderPopUp } from './modules/popup.js';
 import getShow from './modules/get-show.js';
 import displayComment from './modules/commentTemp.js';
 import { updateLikes } from './modules/save-get-likes.js';
-import displayCommentLength from './modules/commentlength';
 
 const card = document.querySelector('.cards');
 const numberItem = document.querySelector('.number');
@@ -36,8 +35,8 @@ const displayItem = (results) => {
   results.forEach((item) => {
     const scoreLi = document.createElement('div');
     scoreLi.className = 'card';
-    scoreLi.innerHTML = `<img src="${item.image.medium}">
-                         <p class="movi-title">${item.name}</p>
+    scoreLi.innerHTML = `<img src="${item.show.image.medium}">
+                         <p class="movi-title">${item.show.name}</p>
                          <div class='buttons-holder'>
                          <button type="submit" class="comment-btn">Comment</button>
                          <div class='likes-holder'>
@@ -82,20 +81,20 @@ const searchShow = async (query) => {
   const respose = await fetch(BASE_URL);
   const res = await respose.json();
   const results = res.map((item) => item);
-      displayItem(results);
-      updateLikes(results);
-      const commentBtn = document.querySelectorAll('.comment-btn');
-      commentBtn.forEach((comment) => {
-        comment.addEventListener('click', (e) => {
-          const NAME = e.target.parentElement.parentElement.childNodes[2].textContent;
-          results.map((item) => {
-            if (NAME === item.name) {
-              displayPopUp(item.id);
-            }
-            return '';
-          });
-        });
+  displayItem(results);
+  updateLikes(results);
+  const commentBtn = document.querySelectorAll('.comment-btn');
+  commentBtn.forEach((comment) => {
+    comment.addEventListener('click', (e) => {
+      const NAME = e.target.parentElement.parentElement.childNodes[2].textContent;
+      results.map((item) => {
+        if (NAME === item.name) {
+          displayPopUp(item.id);
+        }
+        return '';
       });
+    });
+  });
 };
 
 const displayHomePage = async () => {
