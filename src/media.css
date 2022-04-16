@@ -8,11 +8,11 @@
   }
 
   .card {
-    width: 80%;
+    width: 58%;
   }
 
   .home_cards .card {
-    width: 80%;
+    width: 58%;
   }
 
   .seach {
@@ -26,10 +26,11 @@
 
   .home_cards,
   .cards {
-    flex-direction: column;
+    flex-direction: row;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   footer {
@@ -45,16 +46,26 @@
 
 @media only screen and (min-width: 612px) and (max-width: 820px) {
   .card {
-    width: 47%;
+    width:42%;
   }
 
   .home_cards .card {
-    width: 47%;
+    width: 42%;
   }
 
   .home_cards,
   .cards {
     flex-wrap: wrap;
     display: flex;
+  }
+}
+
+@media screen and (max-width: 450px) {
+   .card {
+    width: 80%;
+  }
+
+  .home_cards .card {
+    width: 80%;
   }
 }

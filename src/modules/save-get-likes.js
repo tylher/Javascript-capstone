@@ -45,7 +45,7 @@ const updateLikes = (result) => {
   likes.forEach((like) => {
     like.addEventListener('click', async (e) => {
       e.preventDefault();
-      const NAME = e.target.parentElement.parentElement.childNodes[2].textContent;
+      const NAME = e.target.parentElement.parentElement.parentElement.childNodes[2].textContent;
       result.map((item) => {
         if (NAME === item.name) {
           LikeItem(item.id).then((res) => {

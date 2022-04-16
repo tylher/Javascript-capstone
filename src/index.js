@@ -18,9 +18,11 @@ const displayhomeItem = (result) => {
     scoreLi.className = 'card';
     scoreLi.innerHTML = `<img src="${item.image.medium}">
                          <p class="movi-title">${item.name}</p>
-                         <div>
+                         <div class='buttons-holder'>
                          <button type="submit" class="comment-btn">Comment</button>
+                         <div class='likes-holder'>
                          <i class="fa-regular fa-heart"></i><span class='likes-num'>0</span>
+                         </div>
                          </div>`;
     homecard.appendChild(scoreLi);
   });
@@ -35,9 +37,11 @@ const displayItem = (results) => {
     scoreLi.className = 'card';
     scoreLi.innerHTML = `<img src="${item.image.medium}">
                          <p class="movi-title">${item.name}</p>
-                         <div>
+                         <div class='buttons-holder'>
                          <button type="submit" class="comment-btn">Comment</button>
+                         <div class='likes-holder'>
                           <i class="fa-regular fa-heart"></i><span class='likes-num'>0</span>
+                          </div>
                          </div>`;
     card.appendChild(scoreLi);
   });
@@ -79,10 +83,6 @@ const searchShow = async (query) => {
     .then((jsonData) => {
       const results = jsonData.map((item) => item.show);
       displayItem(results);
-      // results.map((item) => {
-      //   displayLikes(results);
-      //   return '';
-      // });
       updateLikes(results);
       const commentBtn = document.querySelectorAll('.comment-btn');
       commentBtn.forEach((comment) => {
@@ -103,11 +103,11 @@ const searchShow = async (query) => {
 };
 
 const displayHomePage = () => {
-  const BASE_URL = 'https://api.tvmaze.com/search/shows?q=a';
+  const BASE_URL = 'https://api.tvmaze.com/shows';
   fetch(BASE_URL)
     .then((respose) => respose.json())
     .then((jsonData) => {
-      const result = jsonData.map((item) => item.show);
+      const result = jsonData.map((item) => item);
       displayhomeItem(result);
       updateLikes(result);
       const commentBtn = document.querySelectorAll('.comment-btn');
