@@ -26,24 +26,28 @@ li {
 }
 
 main {
-  padding-top: 8rem;
+  padding-top: 5rem;
   display: flex;
-  width: 85%;
-  margin: 0 auto;
+  width: 100%;
   padding-bottom: 8rem;
 }
 
 .title {
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 1em;
+}
+
+.heading{
+  width: 60%;
+  margin-left: 8%;
 }
 
 .title h1 {
   font-size: 65px;
 }
 
-.title h5 {
-  font-size: 30px;
+.title h3 {
+  font-size: 40px;
   color: #ffac31;
   margin-bottom: 20px;
 }
@@ -55,7 +59,6 @@ main {
 }
 
 .block {
-  width: 100%;
  display: block;
 }
 
@@ -64,47 +67,68 @@ footer p {
   font-weight: 300;
 }
 
+.cards-holder{
+  margin: 0 auto;
+}
+
 .cards {
   flex-wrap: wrap;
   display: flex;
+  margin: 0 auto;
+  justify-content:center;
+  align-items: stretch;
+  gap: 20px;
 }
 
 .card {
-  /* overflow: hidden; */
   text-align: start;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   justify-content: center;
   background: rgba(39, 39, 39, 0.274);
   backdrop-filter: blur(2rem);
-  width: 23%;
-  margin: 10px;
+  width: 24%;
 }
 
 .card p {
   margin-top: 5px;
+  margin-left: 10px;
+  font-size: 1.3em;
 }
 
 .card img {
+  width: 100%;
+  margin: auto;
+  margin-top: 0;
   border-bottom-right-radius: 60px;
+}
+
+.buttons-holder{
+display:flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 15px;
 }
 
 .home_cards {
   flex-wrap: wrap;
   width: 100%;
   display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 30px;
+  padding: 0 50px;
 }
 
 .home_cards .card {
-  overflow: hidden;
   text-align: start;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: rgba(39, 39, 39, 0.274);
   backdrop-filter: blur(2rem);
-  width: 19%;
-  margin: 5px;
+  width: 25%;
+  font-size: 1.2em;
 }
 
 .home_cards p {
@@ -120,16 +144,21 @@ footer p {
 .reservation-btn,
 .comment-btn {
   border: none;
-  padding: 3px 6px;
-  margin-left: 7px;
-  margin-bottom: 10px;
-  width: 40%;
+  padding: 6px 10px;
   background-color: #ff9f31;
-  border-radius: 10px;
+  border-radius: 40px !important;
+  font-size: .8em;
+  font-weight: 600;
+  cursor:pointer;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+}
+
+.comment-btn:hover{
+  background-color: #bd7829;
+  color: #fff;
 }
 
 header {
@@ -144,7 +173,7 @@ header {
 }
 
 .seach {
-  width: 23%;
+  width: 25%;
   display: flex;
   justify-content: space-between;
 }
@@ -155,6 +184,7 @@ header {
   align-items: center;
   background-color: #e28205;
   padding: 1px 7px;
+  margin-left: 10px;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -163,7 +193,7 @@ header {
 }
 
 header input {
-  width: 85%;
+  width: 90%;
   padding: 10px 30px;
   font-size: 0.9em;
   border: none;
@@ -227,4 +257,10 @@ footer {
 
 .socials li:hover {
   color: rgb(52, 26, 122);
+}
+
+.likes-holder{
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
