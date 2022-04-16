@@ -46,7 +46,7 @@
 
 @media only screen and (min-width: 612px) and (max-width: 820px) {
   .card {
-    width:42%;
+    width: 42%;
   }
 
   .home_cards .card {
@@ -61,7 +61,7 @@
 }
 
 @media screen and (max-width: 450px) {
-   .card {
+  .card {
     width: 80%;
   }
 
