@@ -29,4 +29,6 @@ const getComments = async (id) => {
   return comm;
 };
 
-export { saveComment, getComments };
+export {
+  saveComment, getComments, BASE_URL, appId,
+};
