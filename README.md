@@ -17,8 +17,11 @@
   > Gitflow
 
 ## live
+[Viwe live demo here](https://tylher.github.io/Javascript-capstone/)
 
 ![movi](https://user-images.githubusercontent.com/57408419/163675995-307db028-da18-4bc4-a9e7-4a7c8b35e551.jpg)
+
+
 ![popup1](https://user-images.githubusercontent.com/57408419/163676283-970fd12a-446d-4bb9-9049-c61c9d107a37.jpg)
 
 ## Getting Started
@@ -84,7 +87,7 @@ npm run deploy
 
 👤 <a href="https://github.com/tylher" target="blank"><img align="center"
       src="https://user-images.githubusercontent.com/57408419/163676887-390d6032-6720-42bb-ad16-f8e199d6f2fa.jpg"
-      alt="adam pithewan" height="50" width="60"  borderRadius="50%"/></a> **Taiwo Damola Adediran**
+      alt="adam pithewan" height="50" width="50"/></a> **Taiwo Damola Adediran**
 
 - GitHub: [@tylher](https://github.com/tylher)
 - Twitter: [@tylher123](https://twitter.com/tylher123)
@@ -92,7 +95,7 @@ npm run deploy
 
 👤 <a href="https://github.com/joel-kalema" target="blank"><img align="center"
       src="https://user-images.githubusercontent.com/57408419/163676914-ad94695e-ba9f-4fea-9a06-02a93c7797a5.jpg"
-      alt="adampithewan" height="50" width="60" borderRadius="50%"/></a> **JOEL KALEMA**
+      alt="adampithewan" height="50" width="50"/></a> **JOEL KALEMA**
 
 - GitHub: [@joel-kalema](https://github.com/joel-kalema)
 - Twitter: [@JoelJklm](https://www.linkedin.com/in/joel-kalema-30518a230/)
