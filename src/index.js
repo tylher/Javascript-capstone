@@ -78,10 +78,9 @@ const displayPopUp = async (id) => {
 
 const searchShow = async (query) => {
   const BASE_URL = `https://api.tvmaze.com/search/shows?q=${query}`;
-  await fetch(BASE_URL)
-    .then((respose) => respose.json())
-    .then((jsonData) => {
-      const results = jsonData.map((item) => item.show);
+  const respose = await fetch(BASE_URL);
+  const res = await respose.json();
+  const results = res.map((item) => item);
       displayItem(results);
       updateLikes(results);
       const commentBtn = document.querySelectorAll('.comment-btn');
@@ -96,33 +95,27 @@ const searchShow = async (query) => {
           });
         });
       });
-    })
-    .catch(() => {
-      displayItem([]);
-    });
 };
 
-const displayHomePage = () => {
+const displayHomePage = async () => {
   const BASE_URL = 'https://api.tvmaze.com/shows';
-  fetch(BASE_URL)
-    .then((respose) => respose.json())
-    .then((jsonData) => {
-      const result = jsonData.map((item) => item);
-      displayhomeItem(result);
-      updateLikes(result);
-      const commentBtn = document.querySelectorAll('.comment-btn');
-      commentBtn.forEach((comment) => {
-        comment.addEventListener('click', (e) => {
-          const NAME = e.target.parentElement.parentElement.childNodes[2].textContent;
-          result.map((item) => {
-            if (NAME === item.name) {
-              displayPopUp(item.id);
-            }
-            return '';
-          });
-        });
+  const respose = await fetch(BASE_URL);
+  const res = await respose.json();
+  const result = res.map((item) => item);
+  displayhomeItem(result);
+  updateLikes(result);
+  const commentBtn = document.querySelectorAll('.comment-btn');
+  commentBtn.forEach((comment) => {
+    comment.addEventListener('click', (e) => {
+      const NAME = e.target.parentElement.parentElement.childNodes[2].textContent;
+      result.map((item) => {
+        if (NAME === item.name) {
+          displayPopUp(item.id);
+        }
+        return '';
       });
     });
+  });
 };
 
 let setTimeoutTOken = 0;
