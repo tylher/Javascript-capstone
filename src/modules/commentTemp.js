@@ -24,6 +24,7 @@ const displayComment = (id) => {
       comment.value = '';
       await saveComment(id, user.name, user.comment).then((res) => {
         if (res.ok) {
+          const commentsHolder = document.querySelector('.comments-holder');
           commentsHolder.innerHTML = '';
           getComments(id).then((data) => {
             data.map((item) => {
@@ -31,6 +32,7 @@ const displayComment = (id) => {
               commentsHolder.innerHTML += temp;
               return '';
             });
+            displayCommentLength();
           });
         }
       });

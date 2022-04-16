@@ -5,6 +5,7 @@ import { temp, renderPopUp } from './modules/popup.js';
 import getShow from './modules/get-show.js';
 import displayComment from './modules/commentTemp.js';
 import { updateLikes } from './modules/save-get-likes.js';
+import displayCommentLength from './modules/commentlength';
 
 const card = document.querySelector('.cards');
 const numberItem = document.querySelector('.number');
