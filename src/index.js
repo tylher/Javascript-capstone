@@ -21,8 +21,11 @@ const displayItem = (results) => {
                          </div>`;
     card.appendChild(scoreLi);
   });
-  const cards = document.querySelectorAll('.card');
-  numberItem.textContent = cards.length - 10;
+  const countItems = () => {
+    const cards = document.querySelectorAll('.card');
+    numberItem.textContent = cards.length - 10;
+  };
+  countItems();
 };
 
 const backgroundBlur = () => {

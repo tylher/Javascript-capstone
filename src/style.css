@@ -51,12 +51,12 @@ main {
 .none {
   width: 0;
   height: 0;
-  opacity: 0;
+  visibility: hidden;
 }
 
 .block {
   width: 100%;
-  opacity: 1;
+  visibility: visible;
 }
 
 footer p {
