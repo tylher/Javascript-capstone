@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { getComments, saveComment } from './savecomments.js';
+import { getComments, saveComment } from './save-get-comments.js';
 import UserDetails from './userdetails.js';
 import displayCommentLength from './commentlength.js';
 
@@ -14,6 +14,7 @@ const displayComment = (id) => {
     });
     displayCommentLength();
   });
+  displayCommentLength();
   submitComment.addEventListener('click', async () => {
     const name = document.querySelector('.username');
     const comment = document.querySelector('.usercomment');
@@ -21,7 +22,7 @@ const displayComment = (id) => {
       const user = new UserDetails(name.value, comment.value);
       name.value = '';
       comment.value = '';
-      saveComment(id, user.name, user.comment).then((res) => {
+      await saveComment(id, user.name, user.comment).then((res) => {
         if (res.ok) {
           commentsHolder.innerHTML = '';
           getComments(id).then((data) => {
