@@ -17,12 +17,15 @@
   > Gitflow
 
 ## live
-[Viwe live demo here](https://tylher.github.io/Javascript-capstone/)
+[View live demo here](https://tylher.github.io/Javascript-capstone/)
 
 ![movi](https://user-images.githubusercontent.com/57408419/163675995-307db028-da18-4bc4-a9e7-4a7c8b35e551.jpg)
 
 
 ![popup1](https://user-images.githubusercontent.com/57408419/163676283-970fd12a-446d-4bb9-9049-c61c9d107a37.jpg)
+
+## video Presentation
+[View video demo here](https://drive.google.com/file/d/1DHOFozLknoQlPZEYwmQ3M2Q-20JtXIxw/view?usp=sharing)
 
 ## Getting Started
 
