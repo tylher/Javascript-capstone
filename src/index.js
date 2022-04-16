@@ -65,15 +65,15 @@ const backgroundBlur = () => {
 
 const displayPopUp = async (id) => {
   const popup = document.querySelector('.popup');
-  await getShow(id).then((data) => {
-    popup.innerHTML = '';
-    popup.classList.remove('d-none');
-    popup.style.width = '80%';
-    popup.style.zIndex = '200';
-    renderPopUp(temp(data));
-    backgroundBlur();
-    displayComment(id);
-  });
+  const result = await getShow(id);
+  popup.innerHTML = '';
+  popup.classList.remove('d-none');
+  popup.style.width = '80%';
+  popup.style.zIndex = '200';
+  renderPopUp(temp(result));
+  backgroundBlur();
+  displayComment(id);
+  return '';
 };
 
 const searchShow = async (query) => {

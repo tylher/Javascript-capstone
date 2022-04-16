@@ -8,7 +8,6 @@ const getLength = () => {
 const displayCommentLength = () => {
   const commentHeader = document.querySelector('.show-comments>h3');
   commentHeader.innerHTML = `Comments ( ${getLength()} )`;
-  console.log(getLength());
 };
 
 export default displayCommentLength;
