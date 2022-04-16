@@ -33,8 +33,6 @@ const displayLikes = async (result) => {
       if (mov !== undefined) {
         likes[i].textContent = mov.likes;
       }
-      // console.log(mov);
-      // likes[i].textContent = mov.likes;
     });
   });
 };
