@@ -14,7 +14,7 @@ const displayComment = (id) => {
     });
     displayCommentLength();
   });
-  displayCommentLength();
+  // displayCommentLength();
   submitComment.addEventListener('click', async () => {
     const name = document.querySelector('.username');
     const comment = document.querySelector('.usercomment');
@@ -22,20 +22,18 @@ const displayComment = (id) => {
       const user = new UserDetails(name.value, comment.value);
       name.value = '';
       comment.value = '';
-      await saveComment(id, user.name, user.comment).then((res) => {
-        if (res.ok) {
-          const commentsHolder = document.querySelector('.comments-holder');
-          commentsHolder.innerHTML = '';
-          getComments(id).then((data) => {
-            data.map((item) => {
-              const temp = `<li>${item.creation_date} ${item.username} : ${item.comment} </li>`;
-              commentsHolder.innerHTML += temp;
-              return '';
-            });
-            displayCommentLength();
-          });
-        }
-      });
+      const res = await saveComment(id, user.name, user.comment);
+      if (res.ok) {
+        const commentsHolder = document.querySelector('.comments-holder');
+        commentsHolder.innerHTML = '';
+        const data = await getComments(id);
+        data.map((item) => {
+          const temp = `<li class='comment-item'>${item.creation_date} ${item.username} : ${item.comment} </li>`;
+          commentsHolder.innerHTML += temp;
+          return '';
+        });
+        displayCommentLength();
+      }
     }
   });
 };
