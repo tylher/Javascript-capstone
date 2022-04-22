@@ -1,5 +1,5 @@
 const temp = ({
-  genres, image, language, summary, name, status,
+  genres, image, language, summary, name, status, rating,
 }) => {
   const card = `
       <div class="popup-card">
@@ -40,6 +40,7 @@ const temp = ({
                     <i class="fa-solid fa-star"></i>
                   </div>
                 </div>
+                <span> ${rating.average ? rating.average : 0} </span>
               </div>
             </div>
             <div class="flex-grp">

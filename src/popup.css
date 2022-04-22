@@ -12,8 +12,8 @@ li {
 }
 
 .fa-star {
-  width: 18px;
-  font-size: 18x;
+  width: 20px;
+  font-size: 20px;
   color: orange;
 }
 
@@ -133,7 +133,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: start;
-  gap: 3px;
+  gap: 7px;
 }
 
 .flex-grp > div>h4{
@@ -224,6 +224,17 @@ li {
     width: 70%;
     padding: 0;
     font-size: 1em;
+  }
+
+  .img-box{
+    width: 100%;
+    display: flex;
+    padding-top: 20px;
+  }
+
+  img{
+    width: 80%;
+    margin: 0 auto;
   }
 
   .popup-card{
