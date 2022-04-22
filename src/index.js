@@ -35,7 +35,7 @@ const displayItem = (results) => {
   results.forEach((item) => {
     const scoreLi = document.createElement('div');
     scoreLi.className = 'card';
-    scoreLi.innerHTML = `<img src="${item.show.image.medium}">
+    scoreLi.innerHTML = `<img src="${item.show.image.original}">
                          <p class="movi-title">${item.show.name}</p>
                          <div class='buttons-holder'>
                          <button type="submit" class="comment-btn">Comment</button>
@@ -53,26 +53,29 @@ const backgroundBlur = () => {
   const popup = document.querySelector('.popup');
   const cover = document.querySelector('.cover');
   const body = document.querySelector('body');
-  cover.classList.add('d-block');
-  body.style.overflow = 'hidden';
+  popup.style.display = 'flex';
+  popup.style.visibility = 'visible';
+  cover.style.display = 'block';
+  body.style.overflowY = 'hidden';
   const closeBtn = document.querySelector('.fa-xmark');
   closeBtn.addEventListener('click', () => {
-    popup.classList.add('d-none');
-    cover.classList.remove('d-block');
-    body.style.overflowY = 'scroll';
   });
+};
+
+const setRatingwidth = (item) => {
+  const fullWidth = document.querySelector('.star-rating').offsetWidth;
+  const rating = document.querySelector('.inner-star-rating');
+  rating.style.width = `${fullWidth * (item.rating.average / 10)}px`;
 };
 
 const displayPopUp = async (id) => {
   const popup = document.querySelector('.popup');
   const result = await getShow(id);
   popup.innerHTML = '';
-  popup.classList.remove('d-none');
-  popup.style.width = '80%';
-  popup.style.zIndex = '200';
   renderPopUp(temp(result));
   backgroundBlur();
   displayComment(id);
+  setRatingwidth(result);
   return '';
 };
 
@@ -88,8 +91,8 @@ const searchShow = async (query) => {
     comment.addEventListener('click', (e) => {
       const NAME = e.target.parentElement.parentElement.childNodes[2].textContent;
       results.map((item) => {
-        if (NAME === item.name) {
-          displayPopUp(item.id);
+        if (NAME === item.show.name) {
+          displayPopUp(item.show.id);
         }
         return '';
       });
