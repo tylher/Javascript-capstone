@@ -16,7 +16,7 @@ const displayhomeItem = (result) => {
   result.forEach((item) => {
     const scoreLi = document.createElement('div');
     scoreLi.className = 'card';
-    scoreLi.innerHTML = `<img src="${item.image.medium}">
+    scoreLi.innerHTML = `<img src="${item.image.original}">
                          <p class="movi-title">${item.name}</p>
                          <div class='buttons-holder'>
                          <button type="submit" class="comment-btn">Comment</button>

@@ -1,18 +1,17 @@
-@media only screen and (max-width: 612px) {
+@media only screen and (max-width: 576px) {
   header {
     flex-wrap: wrap;
     align-items: center;
     padding: 10px 5%;
     position: fixed;
-    z-index: 10;
   }
 
   .card {
-    width: 58%;
+    width: 100%;
   }
 
   .home_cards .card {
-    width: 58%;
+    width: 100%;
   }
 
   .seach {
@@ -20,17 +19,13 @@
     width: 80%;
   }
 
-  .title h5 {
+  .title h3 {
     font-size: 20px;
   }
-
-  .home_cards,
-  .cards {
-    flex-direction: row;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
+  
+  .home_cards,.cards{
+    grid-template-columns: 1fr;
+    padding: 15%;
   }
 
   footer {
@@ -44,28 +39,38 @@
   }
 }
 
-@media only screen and (min-width: 612px) and (max-width: 820px) {
+@media only screen and (min-width: 576px) and (max-width: 768px) {
   .card {
-    width: 42%;
+    width: 100%;
   }
 
   .home_cards .card {
-    width: 42%;
+    width: 100%;
   }
 
   .home_cards,
   .cards {
-    flex-wrap: wrap;
-    display: flex;
+    grid-template-columns: repeat(2,1fr);
+    padding: 0 7%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width:992px) {
+  .cards,.home_cards{
+    grid-template-columns: repeat(3,1fr);
   }
 }
 
 @media screen and (max-width: 450px) {
   .card {
-    width: 80%;
+    width: 100%;
   }
 
   .home_cards .card {
-    width: 80%;
+    width: 100%;
+  }
+
+  .cards,.home_cards{
+    padding: 0 10%;
   }
 }

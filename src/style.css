@@ -32,6 +32,7 @@ li {
 main {
   padding-top: 5rem;
   display: flex;
+  flex-direction: column;
   width: 100%;
   padding-bottom: 8rem;
 }
@@ -77,11 +78,10 @@ footer p {
 
 .cards {
   flex-wrap: wrap;
-  display: flex;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
   gap: 20px;
+  padding: 0 50px;
 }
 
 .card {
@@ -91,7 +91,7 @@ footer p {
   justify-content: center;
   background: rgba(39, 39, 39, 0.274);
   backdrop-filter: blur(2rem);
-  width: 19%;
+  width: 100%;
 }
 
 .card p {
@@ -117,10 +117,9 @@ footer p {
 .home_cards {
   flex-wrap: wrap;
   width: 100%;
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
   padding: 0 50px;
 }
 
@@ -131,7 +130,7 @@ footer p {
   justify-content: center;
   background: rgba(39, 39, 39, 0.274);
   backdrop-filter: blur(2rem);
-  width: 19%;
+  width: 100%;
   font-size: 1.2em;
 }
 
