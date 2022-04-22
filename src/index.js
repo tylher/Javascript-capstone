@@ -54,11 +54,13 @@ const backgroundBlur = () => {
   const cover = document.querySelector('.cover');
   const body = document.querySelector('body');
   popup.style.display = 'flex';
-  popup.style.visibility = 'visible';
   cover.style.display = 'block';
   body.style.overflowY = 'hidden';
   const closeBtn = document.querySelector('.fa-xmark');
   closeBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+    cover.style.display = 'none';
+    body.style.overflowY = 'auto';
   });
 };
 

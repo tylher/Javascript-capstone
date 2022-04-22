@@ -36,7 +36,7 @@ li {
 
 .popup {
   position: fixed;
-  display: flex;
+  display: none;
   top: 5%;
   color: rgb(212, 212, 212);
   z-index: 20;
@@ -45,8 +45,8 @@ li {
   backdrop-filter: blur(1rem);
   background-color: rgba(44, 43, 44, 0.521);
   font-family: 'Quicksand', sans-serif;
-  visibility: hidden;
   padding: 3%;
+  transition: none;
 }
 
 .popup-card {
