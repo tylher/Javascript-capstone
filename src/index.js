@@ -87,7 +87,6 @@ const searchShow = async (query) => {
   const res = await respose.json();
   const results = res.map((item) => item);
   const resultShows = res.map((item) => item.show);
-  console.log(resultShows);
   displayItem(results);
   updateLikes(resultShows);
   const commentBtn = document.querySelectorAll('.comment-btn');
