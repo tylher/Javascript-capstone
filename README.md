@@ -15,6 +15,7 @@
   > API,
   > JSON,
   > Gitflow
+  > ES6
 
 ## live
 [View live demo here](https://tylher.github.io/Javascript-capstone/)
